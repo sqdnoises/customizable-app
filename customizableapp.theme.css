@@ -1,0 +1,100 @@
+/**
+ * @name customizableapp
+ * @author sqd.
+ * @description a very simple configurable app client theme for discord
+*/
+
+/* icons recolor */
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/NSFWtag.css");
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/Channel%26RolesRecolor.css");
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/PrivateChannelRecolor.css");
+@import url("https://raw.githubusercontent.com/KrstlSkll69/vc-snippets/main/StageRecolor.css");
+
+/**
+ * inspired by: https://github.com/nvhhr/discordcss/blob/main/snippets/actuallybasicbackground.theme.css
+*/
+
+/* user configurable variables*/
+:root {
+    /* your custom background image */
+    --cab-bgimg: url("https://raw.githubusercontent.com/sqdnoises/sqdnoises/main/Eerie Forest Dark Aesthetic.jpg");
+    
+    /* use this to tone the bg for better visibility */
+    --cab-adjust: rgba(0, 0, 0, 0.6);
+}
+/* end of user configurable variables*/
+
+:root {
+    --scrollbar-thin-track: transparent;
+    --scrollbar-auto-track: transparent;
+}
+
+/* we'll set the background image at the very bottom */
+body {
+    background: center/cover var(--cab-bgimg) !important;
+}
+
+/* add the toning layer.. */
+#app-mount {
+    background: var(--cab-adjust);
+}
+
+/*then we clear out backgrounds from a bunch of elements*/
+[class^=app_], /* main app bg */
+[class^=bg_], /* another bg layer */
+[class=container_e40c16], /* discord loading layer */
+[class*=guilds_], /* server list */
+[class^=sidebar_], /* channel list */
+[class^=sidebar_] [class^=container_], /* another layer on channel list */
+[class^=chat_], /* chat bg */
+[class^=chatContent_], /* another layer on chat */
+[class^=chatContent_] + [class^=container_], /* member list */
+[class^=members_], /* another layer on member list */
+[class^=member_], /* each member also has a bg */
+[class^=chat_] [class^=container_], /* forum channel */
+[class*=mainCard_], /* forum channel entry */
+[class*=threadSidebarOpen_] ~ [class^=resizeHandle_], /* thread sidebar resizer */
+[class*=threadSidebarOpen_] ~ [class^=container_], /* thread sidebar */
+[class*=threadSidebarOpen_] ~ [class^=container_] > [class^=container_], /* thread sidabar title */
+[class^=chat_] [class^=wrapper_], /* voice channel */
+[class*=gradientContainer_], /* gradients in voice channel */
+[class^=channelChatWrapper_], /* voice channel chat */
+[class^=chatTarget_], /* voice channel chat again */
+[class^=channelChatWrapper_] [class^=resizeHandle_], /* voice channel chat resizer */
+[class^=channelChatWrapper_] [class^=container_], /* voice channel chat yet again */
+[class^=title_], /* top toolbar */
+[class^=children_]::after, /* toolbar overflow fadeout */
+[class^=panels_], /* user panel */
+[class^=chatContent_] > [class^=form_], /* chat input area in visual refresh */
+[class^=channelTextArea_], /* chat input */
+[class^=channelTextArea_] [class^=scrollableContainer_], /* chat input again */
+[class^=chatContent_] > form::before, /* wtf even is this and why, discord? */
+[class^=chatContent_] > form::after, /* weird thing in scrollbar */
+[data-list-id="chat-messages"] > [class^=wrapper_], /* skeleton before messages are loaded */
+[data-list-id="chat-messages"] > [class^=wrapper_] > [class^=wrapper_], /* skeleton has many bones in it */
+[class^=privateChannels_], /* DM list */
+[class^=privateChannels_] [class^=scroller_], /* DM list again */
+[class*=userProfileOuterUnthemed_], /* DM right sidebar when user has no profile theme */
+[class*=userProfileOuterUnthemed_] [class^=userPanelInner_], /* same */
+[class^=sidebar_] + [class^=container_], /* friends list */
+[class^=sidebar_] + [class^=container_] > section, /* friends list top bar */
+[class^=nowPlayingColumn_], /* friends list right sidebar */
+[class^=nowPlayingColumn_] > [class^=container_], /* yeah */
+[class^=nowPlayingColumn_] [class^=body_], /* activities have.. */
+[class^=nowPlayingColumn_] [class^=section_], /* ..a double background too */
+[class^=itemCard_], /* friends list activity cards */
+[class^=shop_], /* shop tab content */
+[class^=shop_] > section, /* shop top bar */
+[class^=shopScroll_], /* shop content */
+[class^=pageWrapper_] /* again */ {
+    background: none !important;
+}
+
+/* remove some shadows */
+[class^=chat_]::before,
+[class^=header_],
+[class^=content_]::before,
+[class^=tabBody_]::before, /* dm list */
+[class^=searchBar_] /* dm list search */ {
+    box-shadow: none;
+}
