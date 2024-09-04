@@ -1,0 +1,27 @@
+/**
+ * @name customizableapp
+ * @author sqd.
+ * @description a very simple configurable app client theme for discord (🔃 Auto-updating)
+ * @source https://github.com/sqdnoises/customizable-app
+*/
+
+/**
+ * This file is 🔃 Auto-updating, any changes to the static version will
+ * automatically be imported.
+ * 
+ * However any new updates that cause changes that have new configurable options
+ * would not show the configurable options and you would have to download the new
+ * auto-updating file from https://github.com/sqdnoises/customizable-app again.
+*/
+
+@import url("https://raw.githubusercontent.com/sqdnoises/customizable-app/main/customizableapp.theme.css");
+
+/* user configurable variables*/
+:root {
+    /* your custom background image */
+    --cab-bgimg: url("https://raw.githubusercontent.com/sqdnoises/sqdnoises/main/Eerie Forest Dark Aesthetic.jpg");
+    
+    /* use this to tone the bg for better visibility */
+    --cab-adjust: rgba(0, 0, 0, 0.6);
+}
+/* end of user configurable variables*/
